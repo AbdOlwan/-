@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جدول الحصص</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+
+  <!-- شاشة الترحيب (أول تشغيل) -->
+  <section id="view-welcome" class="view welcome" hidden>
+    <div class="welcome-card">
+      <h1>أهلاً بك</h1>
+      <p>ابدأ بإعداد جدول الحصص الخاص بمدرستك أو معهدك.</p>
+      <button type="button" class="btn btn-primary btn-lg" id="welcome-start">ابدأ إعداد الجدول</button>
+      <p class="welcome-note">كل البيانات تُحفظ على هذا الجهاز فقط.</p>
+    </div>
+  </section>
+
+  <!-- التطبيق -->
+  <div id="app-shell" hidden>
+    <header class="app-header">
+      <div class="app-header-inner">
+        <div class="app-title">
+          <h1 id="header-school-name">جدول الحصص</h1>
+          <p id="header-subtitle">نظام إعداد جدول الحصص</p>
+        </div>
+        <span class="save-badge" id="save-badge" aria-live="polite">تم الحفظ تلقائيًا</span>
+      </div>
+      <nav class="app-nav" id="app-nav" aria-label="التنقل الرئيسي">
+        <button type="button" class="nav-btn" data-nav="home">الرئيسية</button>
+        <button type="button" class="nav-btn" data-nav="schedule">جدول الحصص</button>
+        <button type="button" class="nav-btn" data-nav="data">إدارة البيانات</button>
+        <button type="button" class="nav-btn" data-nav="settings">الإعدادات</button>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <section id="view-home" class="view" hidden></section>
+      <section id="view-schedule" class="view" hidden></section>
+      <section id="view-data" class="view" hidden></section>
+      <section id="view-settings" class="view" hidden></section>
+    </main>
+
+    <footer class="app-footer">
+      <span>بياناتك محفوظة على هذا الجهاز فقط. احتفظ بنسخة احتياطية بين حين وآخر.</span>
+    </footer>
+  </div>
+
+  <div id="toast-area" class="toast-area" aria-live="polite"></div>
+  <div id="modal-area"></div>
+
+  <!-- منطقة الطباعة: مخفية على الشاشة، تظهر عند الطباعة فقط -->
+  <div id="print-root" aria-hidden="true"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/backup.js"></script>
+  <script src="js/print.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
